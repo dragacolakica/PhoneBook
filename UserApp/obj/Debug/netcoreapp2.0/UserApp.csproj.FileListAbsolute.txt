@@ -1,0 +1,11 @@
+C:\Users\DRAGA\Downloads\PhoneBook\src\UserApp\obj\Debug\netcoreapp2.0\UserApp.csprojResolveAssemblyReference.cache
+C:\Users\DRAGA\Downloads\PhoneBook\src\UserApp\obj\Debug\netcoreapp2.0\UserApp.csproj.CoreCompileInputs.cache
+C:\Users\DRAGA\Downloads\PhoneBook\src\UserApp\obj\Debug\netcoreapp2.0\UserApp.AssemblyInfoInputs.cache
+C:\Users\DRAGA\Downloads\PhoneBook\src\UserApp\obj\Debug\netcoreapp2.0\UserApp.AssemblyInfo.cs
+C:\Users\DRAGA\Downloads\PhoneBook\src\UserApp\bin\Debug\netcoreapp2.0\UserApp.deps.json
+C:\Users\DRAGA\Downloads\PhoneBook\src\UserApp\bin\Debug\netcoreapp2.0\UserApp.runtimeconfig.json
+C:\Users\DRAGA\Downloads\PhoneBook\src\UserApp\bin\Debug\netcoreapp2.0\UserApp.runtimeconfig.dev.json
+C:\Users\DRAGA\Downloads\PhoneBook\src\UserApp\bin\Debug\netcoreapp2.0\UserApp.dll
+C:\Users\DRAGA\Downloads\PhoneBook\src\UserApp\bin\Debug\netcoreapp2.0\UserApp.pdb
+C:\Users\DRAGA\Downloads\PhoneBook\src\UserApp\obj\Debug\netcoreapp2.0\UserApp.dll
+C:\Users\DRAGA\Downloads\PhoneBook\src\UserApp\obj\Debug\netcoreapp2.0\UserApp.pdb

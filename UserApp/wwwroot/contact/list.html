@@ -1,0 +1,51 @@
+﻿<div class="col-md-12">
+    <div class="form-group ">
+        <div class="col-md-6">
+            <div class="input-group">
+                <select ng-model="vm.selectedTag" ng-options="c.value for c in vm.tags"
+                        class="form-control"></select>
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" ng-click="vm.addTag()">Select tag</button>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+<div  ng-repeat="selTag in vm.selectedTags">
+    {{selTag.value}}
+    <button class="btn btn-default btn-rounded" ng-click="vm.deleteTag(selTag.id)">x</button>
+</div>
+<hr />
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>City</th>
+            <th>Street</th>
+            <th>Action</th>
+        </tr>
+        <tr>
+            <th></th>
+            <th class="col-md-2"><input type="search" class="form-control" ng-model="vm.searchFirstName" /></th>
+            <th class="col-md-2"><input type="search" class="form-control" ng-model="vm.searchLastName" /></th>
+            <th></th>
+            <th></th>
+            <th><button class="btn btn-default btn-rounded" ng-click="vm.search()">Search the phonebook by selected tag..</button></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="contact in vm.contacts">
+            <td>{{contact.id}}</td>
+            <td>{{contact.firstName}}</td>
+            <td>{{contact.lastName}}</td>
+            <td>{{contact.city}}</td>
+            <td>{{contact.street}}</td>
+            <td>
+                <a class="btn btn-primary btn-rounded" href="#/item/{{contact.id}}">Details</a>
+                <button class="btn btn-danger btn-rounded" ng-click="vm.deleteContact(contact.id)">x</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

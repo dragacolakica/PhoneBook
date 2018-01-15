@@ -1,0 +1,121 @@
+﻿<div>
+    <a class="btn btn-default btn-rounded" href="#/">Odustani</a>
+    <button class="btn btn-info btn-rounded" ng-click="vm.editMode = !vm.editMode" ng-show="!vm.newContact">Edit contact</button>
+    <button class="btn btn-primary btn-rounded" ng-click="vm.getTags()" ng-show="!vm.newContact">Add tags</button>
+</div>
+<hr />
+<form class="form-horizontal" name="vm.contactForm" novalidate="novalidate">
+    <div class="form-group">
+        <label class="col-md-3 control-label" for="year">Name</label>
+        <div class="col-md-6">
+            <input id="firstName" name="firstName" class="form-control" type="text"
+                   ng-readonly="!vm.editMode"
+                   ng-required="true"
+                   ng-model="vm.contact.firstName" placeholder="enter name">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-3 control-label" for="year">Surname</label>
+        <div class="col-md-6">
+            <input id="lastName" name="lastName" class="form-control" type="text"
+                   ng-readonly="!vm.editMode"
+                   ng-required="true"
+                   ng-model="vm.contact.lastName" placeholder="enter surname">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-3 control-label" for="year">City</label>
+        <div class="col-md-6">
+            <input id="city" name="city" class="form-control" type="text"
+                   ng-readonly="!vm.editMode"
+                   ng-model="vm.contact.city" placeholder="city">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-3 control-label" for="year">Street</label>
+        <div class="col-md-6">
+            <input id="street" name="street" class="form-control" type="text"
+                   ng-readonly="!vm.editMode"
+                   ng-model="vm.contact.street" placeholder="street">
+        </div>
+    </div>
+    <fieldset>
+        <div class="form-group">
+            <label class="col-md-3 control-label">Email:</label>
+            <div class="col-md-6">
+                <ul>
+                    <li ng-repeat="email in vm.emails">
+                        {{email.string}}
+                        <button class="btn btn-default" ng-click="vm.deleteEmail(email)" ng-disabled="!vm.editMode">x</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="form-group" ng-show="vm.editMode">
+            <label class="col-md-3 control-label"></label>
+            <div class="col-md-6">
+                <div class="input-group">
+                    <input type="email" name="email" class="form-control"
+                           ng-model="vm.email" placeholder="add contact email">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button" ng-click="vm.addEmail()">Add</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+    <fieldset>
+        <div class="form-group">
+            <label class="col-md-3 control-label">Phone:</label>
+            <div class="col-md-6">
+                <ul>
+                    <li ng-repeat="phone in vm.phones">
+                        {{phone.string}}
+                        <button class="btn btn-default" ng-click="vm.deletePhone(phone)" ng-disabled="!vm.editMode">x</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="form-group" ng-show="vm.editMode">
+            <label class="col-md-3 control-label"></label>
+            <div class="col-md-6">
+                <div class="input-group">
+                    <input type="text" class="form-control" ng-model="vm.phone" placeholder="add phone number">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button" ng-click="vm.addPhone()">Add</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+    <fieldset ng-show="!vm.newContact">
+        <div class="form-group">
+            <label class="col-md-3 control-label">Tag:</label>
+            <div class="col-md-6">
+                <ul>
+                    <li ng-repeat="tag in vm.selectedTags">
+                        {{tag.value}}
+                        <button class="btn btn-default" ng-disabled="true">x</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="form-group" ng-show="vm.showTags">
+            <label class="col-md-3 control-label"></label>
+            <div class="col-md-6">
+                <div class="input-group">
+                    <select ng-model="vm.selectedTag" ng-options="c.value for c in vm.tags" class="form-control"></select>
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button" ng-click="vm.addTag()">Add</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+    <div class="form-group">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <button type="button" class="btn btn-primary btn-rounded" ng-click="vm.add()" ng-show="vm.editMode || vm.showTags">Save</button>
+        </div>
+    </div>
+</form>
